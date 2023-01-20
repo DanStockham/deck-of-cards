@@ -1,5 +1,6 @@
 import { Deck } from "../Models/Deck";
-import { FULL_DECK } from "../../Data/FullDeck";
+import { FULL_DECK } from "../Data/FullDeck";
+import { Dealer } from "../Models/Dealer";
 
 describe('Tests', () => {
     test('PASS', () => {
@@ -17,5 +18,21 @@ describe('Tests', () => {
         shuffledDeck.shuffle();
 
         expect(shuffledDeck).not.toEqual(mockDeck);
+    })
+
+    test('Dealer can deal a card after shuffling', () => {
+        const mockDeck = new Deck();
+
+        FULL_DECK.forEach((card) => mockDeck.push(card));
+
+        mockDeck.shuffle();
+
+        const topCard = mockDeck.peek();
+
+        const dealer = new Dealer(mockDeck);
+
+        const dealtCard = dealer.deal();
+
+        expect(dealtCard).toBe(topCard);
     })
 });

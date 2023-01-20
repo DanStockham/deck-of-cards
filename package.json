@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "tsc --build --clean",
     "build": "tsc --resolveJsonModule",
-    "start": "node .",
+    "start": "node ./dist/index.js",
     "build:start": "npm run build && npm run start",
     "pretty": "prettier --check \"*.{ts,tsx,css}\"",
     "pretty:fix": "prettier --write \"*.{ts,tsx,css}\"",

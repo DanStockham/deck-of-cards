@@ -1,5 +1,5 @@
-import { Card } from "../../Card";
-import type { Stack } from "../../Stack";
+import { Card } from "./Card";
+import type { Stack } from "../Interfaces/Stack";
 
 export class Deck implements Stack<Card> {
     [n: number]: Card;
